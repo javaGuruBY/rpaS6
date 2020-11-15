@@ -45,3 +45,25 @@ Condition :
 lead size
 Behavior :
 when you write the size of the lead decreases;
+
+Object - Sofa.
+Condition :
+fold and unfold
+Behavior :
+when you press on one of the parts of the sofa it unfolds;
+when you press it one again the sofa it folds
+
+Object - Radiator.
+Condition :
+swith on and off
+Behavior :
+swith on: heats up and electricity consumed
+swith off: cools down and temperature decrease;
+
+Object - Cupbord.
+Condition :
+open and close
+empty and full
+Behavior :
+when you move the door cupboard become open, when you remove back it become close;
+when you put something inside it gets full , when you take something it become empty;
