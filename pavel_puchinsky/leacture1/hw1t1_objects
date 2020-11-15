@@ -1,0 +1,28 @@
+Object - Sneakers.
+Condition :
+matirial of sole
+Behavior :
+wearing (
+the outsole wears out as you wear it)ж
+
+Object - Iron.
+Condition :
+swith off, swith on
+Behavior :
+swith on:heats up and electricity consumed
+swith off: cools down;
+
+Object - Lighter.
+Condition :
+botton on and off.
+Behavior :
+swith on:fired and gas consumed
+swith off: the fire goes out;
+
+Object - Bulb.
+Condition :
+botton on and off,filament.
+Behavior :
+swith on:filament lightning and heats up and electricity consumed
+swith off: filamint not lightning and cools down;
+
