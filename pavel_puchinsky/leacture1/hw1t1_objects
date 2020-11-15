@@ -26,12 +26,12 @@ Behavior :
 swith on:filament lightning and heats up and electricity consumed
 swith off: filamint not lightning and cools down;
 
-Object - Lighter.
+Object - Bottle of water.
 Condition :
-botton on and off.
+full or empty.
 Behavior :
-swith on:fired and gas consumed
-swith off: the fire goes out;
+when you drink water bottle become empty,
+when you pour water into the bottle it's become full;
 
 Object - Fridge.
 Condition :
@@ -39,3 +39,9 @@ swith on and off.
 Behavior :
 swith on:compressor work and frion cools air also electricity consumed
 swith off:compressor not work frion not cools air;
+
+Object - Pencil.
+Condition :
+lead size
+Behavior :
+when you write the size of the lead decreases;
