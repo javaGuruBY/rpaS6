@@ -1,0 +1,20 @@
+numberOfShipsinPort - Количество кораблей в порту
+integerCounter - Счетчик целых чисел
+numberOne - Первое число
+responseToQuestion - Ответ на вопрос
+randomNumber - Случайное число
+randomNumberGeneration - Генератор случайных чисел
+colorAuto - Цвет автомобиля
+speedAuto - Скорость движения автомобиля
+userNumberEntered - Введеное число пользователем
+largestNumber - Наибольшее число
+smallestNumber - Наименьшее число
+leftBorderNumberRange - Левая граница диапазона чисел
+rightBorderNumberRange - Правая граница диапазона чисел
+definedNumberUser - Загаданное пользователем число
+answerСhoice - Вариант ответа
+bankAccount - Банковский счет
+bankBalance - Банковский баланс
+creditCard - Кредитная карта
+bikeWheelsNumber - Количество колес у велосипеда
+ticketСost - Стоимость билета
