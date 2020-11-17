@@ -1,0 +1,69 @@
+Object - Sneakers.
+Condition :
+matirial of sole
+Behavior :
+wearing (
+the outsole wears out as you wear it);
+
+Object - Iron.
+Condition :
+swith off, swith on
+Behavior :
+swith on:heats up and electricity consumed
+swith off: cools down;
+
+Object - Lighter.
+Condition :
+botton on and off.
+Behavior :
+swith on:fired and gas consumed
+swith off: the fire goes out;
+
+Object - Bulb.
+Condition :
+botton on and off,filament.
+Behavior :
+swith on:filament lightning and heats up and electricity consumed
+swith off: filamint not lightning and cools down;
+
+Object - Bottle of water.
+Condition :
+full or empty.
+Behavior :
+when you drink water bottle become empty,
+when you pour water into the bottle it's become full;
+
+Object - Fridge.
+Condition :
+swith on and off.
+Behavior :
+swith on:compressor work and frion cools air also electricity consumed
+swith off:compressor not work frion not cools air;
+
+Object - Pencil.
+Condition :
+lead size
+Behavior :
+when you write the size of the lead decreases;
+
+Object - Sofa.
+Condition :
+fold and unfold
+Behavior :
+when you press on one of the parts of the sofa it unfolds;
+when you press it one again the sofa it folds
+
+Object - Radiator.
+Condition :
+swith on and off
+Behavior :
+swith on: heats up and electricity consumed
+swith off: cools down and temperature decrease;
+
+Object - Cupbord.
+Condition :
+open and close
+empty and full
+Behavior :
+when you move the door cupboard become open, when you remove back it become close;
+when you put something inside it gets full , when you take something it become empty;
