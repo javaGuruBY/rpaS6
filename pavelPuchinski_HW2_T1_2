@@ -1,0 +1,20 @@
+Количество кораблей в порту int numShipInPort
+Счетчик целых чисел long countInt
+Первое целое число long firstInt
+Случайное целое число long rndInt
+Случайное вещественное число  double rndFloat
+Скорость движения автомобиля short speedCar
+Введенное пользователем целое число int userInt
+Наибольшее целое число long maxInt
+Наименьшее вещественное число float minInt
+Левая граница диапазона целых чисел long leftInt
+Правая граница диапазона целых чисел long rightInt
+Загаданное пользователем целое число long userRndInt
+Денежный баланс float, double cashBalance 
+Количество колес у велосипеда byte bikeWheels
+Голодный ли человек boolen isHungry
+Символ латинского алфавита byte latinChar
+Четное ли число boolen isEven
+Текущий год short curYear
+Знак пробела char spaceChar
+Стоимость билета float priceTicket
