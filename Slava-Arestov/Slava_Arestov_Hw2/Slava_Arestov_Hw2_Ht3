@@ -1,0 +1,12 @@
+public class MathOperationsDemo {
+    public static void main(String[] args) {
+
+        short a = 25;
+        short a = 5;
+        System.out.println("a + b = " + (25 + 5)); // 1
+        System.out.println("a - b = " + (25 - 5)); // 1
+        System.out.println("a * b = " + (25 * 5)); // 1
+        System.out.println("a / b = " + (25 / 5)); // 1
+
+    }
+}
