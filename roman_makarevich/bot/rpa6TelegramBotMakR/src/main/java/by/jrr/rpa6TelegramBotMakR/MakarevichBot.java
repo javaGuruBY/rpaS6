@@ -27,13 +27,33 @@ public class MakarevichBot extends TelegramLongPollingBot {
             if (message.hasText()) {
                 String text = message.getText();
                 if (text.equals("/start")) {
-                    String response = "/hello - U can cay\"hello!\"";
+                    String response = "/hello - U can say\"hello!\"\n" +
+                            "/say ... - you can ask me anything.\n" +
+                            "/java - you will learn all about java.";
                     sendMesg(message, response);
-                }else if (text.equals("/hello")) {
-                    String response = "Hello!";
+                } else if (text.equals("/hello")) {
+                    String response = "Hello!, " + message.getFrom().getFirstName();
                     sendMesg(message, response);
-                }else {
-                    String response = "/hello - U can cay\"hello!\"";
+                } else if (text.startsWith("/say")) {
+                    String question = text.substring(text.indexOf("/say") + "/say".length()).trim();
+                    if (question.equals("где?")) {
+                        String response = "Тут!";
+                        sendMesg(message, response);
+                    } else if (question.equals("кто?")) {
+                        String response = "Я!";
+                        sendMesg(message, response);
+                    } else {
+                        String response = "I don't know!";
+                        sendMesg(message, response);
+                    }
+
+                } else if (text.equals("/java")) {
+                    String response = "https://moodle.jrr.by/";
+                    sendMesg(message, response);
+                } else {
+                    String response = "/hello - U can say\"hello!\"\n" +
+                            "/say ... - you can ask me anything.\n" +
+                            "/java - you will learn all about java.";
                     sendMesg(message, response);
                 }
             }
