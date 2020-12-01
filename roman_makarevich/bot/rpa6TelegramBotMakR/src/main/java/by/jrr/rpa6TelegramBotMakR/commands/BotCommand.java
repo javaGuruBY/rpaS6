@@ -2,7 +2,8 @@ package by.jrr.rpa6TelegramBotMakR.commands;
 
 public enum BotCommand {
     START("/start", "Старт"),
-    NONE("","");
+    ORDER("/order", "Заказ"),
+    NONE("", "");
 
     final String command;
     final String description;
@@ -24,6 +25,8 @@ public enum BotCommand {
         switch (command) {
             case "/start":
                 return START;
+            case "/order":
+                return ORDER;
             default:
                 return NONE;
         }

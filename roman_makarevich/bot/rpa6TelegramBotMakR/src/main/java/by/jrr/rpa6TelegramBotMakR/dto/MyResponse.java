@@ -20,7 +20,7 @@ public class MyResponse {
         return catId;
     }
 
-    public String getText() {
+    public String getResponse() {
         return response;
     }
 }
