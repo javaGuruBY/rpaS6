@@ -1,0 +1,1 @@
+web: java -jar target/rpa6TelegramBotMakR-0.0.1-SNAPSHOT.jar
