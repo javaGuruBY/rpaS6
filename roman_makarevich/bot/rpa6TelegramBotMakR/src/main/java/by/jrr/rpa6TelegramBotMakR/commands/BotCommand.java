@@ -3,6 +3,7 @@ package by.jrr.rpa6TelegramBotMakR.commands;
 public enum BotCommand {
     START("/start", "Старт"),
     ORDER("/order", "Заказ"),
+    CHECK_DEBT("/debt", "Проверить долг по кредиту"),
     NONE("", "");
 
     final String command;
@@ -28,6 +29,8 @@ public enum BotCommand {
         switch (command) {
             case "/start":
                 return START;
+            case "/debt":
+                return CHECK_DEBT;
             default:
                 return NONE;
         }

@@ -1,14 +1,12 @@
 package by.jrr.rpa6TelegramBotMakR.processor;
 
 import by.jrr.rpa6TelegramBotMakR.dto.MyResponse;
+import by.jrr.rpa6TelegramBotMakR.dto.ResponseWrapper;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 
 @Component
 public class MakarevichBot extends TelegramLongPollingBot {
@@ -26,14 +24,16 @@ public class MakarevichBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        MyResponse[] responses = updateDispatcher.dispatch(update);
+        sendMessage(updateDispatcher.dispatch(update));
+    }
 
-
-        for (int i = 0; i <responses.length ; i++) {
-            sendMesg(responses[i]);
+    public void sendMessage(ResponseWrapper response) {
+        if(response.hasUserResponse()) {
+            sendMesg(response.getUserResponse());
         }
-
-
+        if(response.hasAdminResponse()) {
+            sendMesg(response.getAdminResponse());
+        }
     }
 
     public void sendMesg(MyResponse response) {
@@ -47,4 +47,6 @@ public class MakarevichBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
+
 }

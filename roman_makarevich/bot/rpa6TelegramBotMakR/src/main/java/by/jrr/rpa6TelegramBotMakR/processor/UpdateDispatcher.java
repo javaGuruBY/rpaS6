@@ -1,43 +1,47 @@
 package by.jrr.rpa6TelegramBotMakR.processor;
 
 import by.jrr.rpa6TelegramBotMakR.commands.BotCommand;
-import by.jrr.rpa6TelegramBotMakR.commands.headMenu.MessageToMe;
-import by.jrr.rpa6TelegramBotMakR.commands.headMenu.NotSupported;
-import by.jrr.rpa6TelegramBotMakR.commands.headMenu.Order;
-import by.jrr.rpa6TelegramBotMakR.commands.headMenu.Start;
+import by.jrr.rpa6TelegramBotMakR.commands.headMenu.*;
 import by.jrr.rpa6TelegramBotMakR.dto.MyResponse;
+import by.jrr.rpa6TelegramBotMakR.dto.ResponseWrapper;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class UpdateDispatcher {
-    public MyResponse[] dispatch(Update update) {
+    public ResponseWrapper dispatch(Update update) {
         if (update.hasMessage()) {
 
             return processMessage(update.getMessage());
         }
-        return new MyResponse[0];
+        return new ResponseWrapper();
     }
 
-    public MyResponse[] processMessage(Message message) {
+    public ResponseWrapper processMessage(Message message) {
         if (message.hasText()) {
             return processText(message.getChatId(), message.getText(), message.getFrom().getFirstName());
         }
-        return new MyResponse[0];
+        return new ResponseWrapper();
     }
 
-    public MyResponse[] processText(Long chatId, String text, String name) {
+    public ResponseWrapper processText(Long chatId, String text, String name) {
+
         BotCommand command = BotCommand.toCommand(text);
+
         switch (command) {
             case START:
-                return new MyResponse[]{new MyResponse(chatId, new Start())};
+                return new ResponseWrapper(new MyResponse(chatId, new Start()));
             case ORDER:
-                return new MyResponse[]{new MyResponse(chatId, new Order()), new MyResponse(Long.valueOf(473566327), new MessageToMe(text, name))};
+                return new ResponseWrapper(
+                        new MyResponse(chatId, new Order()),
+                        new MyResponse(new MessageToMe(text, name))
+                );
+            case CHECK_DEBT:
+                return new ResponseWrapper(
+                        new MyResponse(chatId, new DebtCommandProcessor()),
+                        new MyResponse(new DebtCommandProcessor()));
             case NONE:
             default:
-                return new MyResponse[]{new MyResponse(chatId, new NotSupported())};
+                return new ResponseWrapper(new MyResponse(chatId, new NotSupported()));
         }
     }
 }
