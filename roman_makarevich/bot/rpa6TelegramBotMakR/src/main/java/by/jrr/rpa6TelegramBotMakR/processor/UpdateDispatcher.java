@@ -15,6 +15,7 @@ import java.util.Collections;
 public class UpdateDispatcher {
     public MyResponse[] dispatch(Update update) {
         if (update.hasMessage()) {
+
             return processMessage(update.getMessage());
         }
         return new MyResponse[0];
@@ -22,18 +23,18 @@ public class UpdateDispatcher {
 
     public MyResponse[] processMessage(Message message) {
         if (message.hasText()) {
-            return processText(message.getChatId(), message.getText());
+            return processText(message.getChatId(), message.getText(), message.getFrom().getFirstName());
         }
         return new MyResponse[0];
     }
 
-    public MyResponse[] processText(Long chatId, String text) {
+    public MyResponse[] processText(Long chatId, String text, String name) {
         BotCommand command = BotCommand.toCommand(text);
         switch (command) {
             case START:
                 return new MyResponse[]{new MyResponse(chatId, new Start())};
             case ORDER:
-                return new MyResponse[]{new MyResponse(chatId, new Order()), new MyResponse(Long.valueOf(473566327), new MessageToMe())};
+                return new MyResponse[]{new MyResponse(chatId, new Order()), new MyResponse(Long.valueOf(473566327), new MessageToMe(text, name))};
             case NONE:
             default:
                 return new MyResponse[]{new MyResponse(chatId, new NotSupported())};

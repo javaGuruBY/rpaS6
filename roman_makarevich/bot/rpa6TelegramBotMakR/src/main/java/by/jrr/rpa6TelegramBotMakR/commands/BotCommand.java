@@ -22,11 +22,12 @@ public enum BotCommand {
     }
 
     public static BotCommand toCommand(String command) {
+        if (command.startsWith("+375")&& command.length() == 13){
+            return ORDER;
+        }
         switch (command) {
             case "/start":
                 return START;
-            case "/order":
-                return ORDER;
             default:
                 return NONE;
         }
